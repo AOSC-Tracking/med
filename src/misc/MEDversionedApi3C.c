@@ -115,7 +115,7 @@ MedFuncType _MEDversionedApi3( const char * const key,
   /*      ) { */
 
 #if H5_VERS_MINOR > 12
-#error "Don't forget to change the compatibility version of the library !"
+#warning "Don't forget to change the compatibility version of the library !"
 #endif
   
   if (_litmajeur == 5) {

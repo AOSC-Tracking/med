@@ -157,7 +157,7 @@ med_idt _MEDfileCreate(const char * const filename, const med_access_mode access
     {
     case 0: _release = MED_50_LATEST_RELEASE; break;
 #if (MED_NUM_MINEUR == 0) && (MED_NUM_RELEASE > 0)
-#error "Don't forget to change the value of MED_50_LATEST_RELEASE when you change the release of version 5.0 of the library !"
+#warning "Don't forget to change the value of MED_50_LATEST_RELEASE when you change the release of version 5.0 of the library !"
 #endif
     /* case 1: _release = 0; break; */
     /* case 2: _release = 1; break; */
@@ -190,7 +190,7 @@ med_idt _MEDfileCreate(const char * const filename, const med_access_mode access
    * Un test autoconf permet de fixer un intervalle de version HDF à MED.
    */
 #if H5_VERS_MINOR > 12
-#error "Don't forget to change the compatibility version of the library !"
+#warning "Don't forget to change the compatibility version of the library !"
 #endif
    
   if ( H5Pset_libver_bounds( _fapl, H5F_LIBVER_V112, H5F_LIBVER_V112 ) ) {

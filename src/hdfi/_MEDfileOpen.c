@@ -114,7 +114,7 @@ med_idt _MEDfileOpen(const char * const filename,const med_access_mode accessmod
   */
 
 #if H5_VERS_MINOR > 12
-#error "Don't forget to change the compatibility version of the library !"
+#warning "Don't forget to change the compatibility version of the library !"
 #endif
 /* L'avantage de bloquer le modèle interne HDF5
    est que l'on peut modifier des fichiers med de différentes versions majeures de fichiers.

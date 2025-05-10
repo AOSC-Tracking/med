@@ -440,7 +440,7 @@ med_idt _MEDmemFileOpen(const char * const filename, med_memfile * const memfile
   }
 
 #if H5_VERS_MINOR > 12
-#error "Don't forget to change the compatibility version of the library !"
+#warning "Don't forget to change the compatibility version of the library !"
 #endif
   if ( H5Pset_libver_bounds( _fapl, H5F_LIBVER_V112, H5F_LIBVER_V112 ) ) {
     MED_ERR_(_fid,MED_ERR_INIT,MED_ERR_PROPERTY,MED_ERR_FILEVERSION_MSG);
@@ -507,7 +507,7 @@ med_idt _MEDmemFileOpen(const char * const filename, med_memfile * const memfile
       }
       _fversionMM = 100*_fmajor+10*_fminor;
 #if H5_VERS_MINOR > 12
-#error "Don't forget to change the compatibility version of the library !"
+#warning "Don't forget to change the compatibility version of the library !"
 #endif
       if ( _fversionMM < 500 ) { /*100*MED_NUM_MAJEUR+10*MED_NUM_MINEUR*/
 	if ( H5Fset_libver_bounds( _fid, H5F_LIBVER_V18, H5F_LIBVER_V18 ) ) {

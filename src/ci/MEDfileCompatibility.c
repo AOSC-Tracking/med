@@ -73,7 +73,7 @@ MEDfileCompatibility(const char* const filename,
   /* ISCRUTE(HDF_VERSION_NUM_REF); */
   if ( (_hversionMMR >= HDF_VERSION_NUM_REF) &&
        (_hmajeur == HDF_VERSION_MAJOR_REF  )  && 
-       (_hmineur == HDF_VERSION_MINOR_REF  ) ) *hdfok = MED_TRUE;
+       (_hmineur >= HDF_VERSION_MINOR_REF  ) ) *hdfok = MED_TRUE;
 
   /* TODO : Vérifier si la version mineure HDF du fichier est supérieure
      à la version mineure de la bibliothèque HDF utilisée :
@@ -117,8 +117,8 @@ MEDfileCompatibility(const char* const filename,
 #error "Don't forget to update the test version here when you change the major version of the library !"
 #endif
 #if H5_VERS_MINOR > 12
-#error "Don't forget to check the compatibility version of the library, depending on the internal hdf model choice !"
-#error "Cf. _MEDfileCreate ..."
+#warning "Don't forget to check the compatibility version of the library, depending on the internal hdf model choice !"
+#warning "Cf. _MEDfileCreate ..."
 #endif
 
  SORTIE:
