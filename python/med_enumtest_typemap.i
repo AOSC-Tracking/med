@@ -130,7 +130,7 @@ public:
   pargs  = Py_BuildValue("(i)",*$1);
   pinst  = PyEval_CallObject(pclass, pargs);
   if (pinst == NULL) printf("%s\n","Can't instanciate class $1_basetype");
-  $result=SWIG_Python_AppendOutput($result, pinst);
+  $result=SWIG_Python_AppendOutput($result, pinst, $isvoid);
 }
 
 %typemap(in,numinputs=0) TypeEnum * (TypeEnum temp) {
