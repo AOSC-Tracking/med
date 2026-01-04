@@ -146,7 +146,7 @@ med_err _MEDfieldComputingStepCheck236(med_idt fid, const char * const fieldname
        * On vérifie que le nom du maillage par défaut est le même pour toutes
        * les étapes de calcul de tous les couples (entitytype,geotype)
        */
-      if (_MEDiterate(_cstpid, _MEDcheckAttributeStringFunc, &_itdatas ) < 0) {
+      if (_MEDiterate(_cstpid, (medvisitorfunc)_MEDcheckAttributeStringFunc, &_itdatas ) < 0) {
 	MED_ERR_(_ret,MED_ERR_INVALID,MED_ERR_ATTRIBUTE,MED_ERR_VALUE_MSG);
 	SSCRUTE(_itdatas.attvalprec); SSCRUTE(_itdatas.attval); goto ERROR;
       }
@@ -157,7 +157,7 @@ med_err _MEDfieldComputingStepCheck236(med_idt fid, const char * const fieldname
      * les étapes de calcul de tous les couples (entitytype,geotype)
      */
     if (checkmultiplemesh) {
-      if (_MEDiterate(_cstpid, _MEDchecknSublinkFunc, multiplemesh ) < 0) {
+      if (_MEDiterate(_cstpid, (medvisitorfunc)_MEDchecknSublinkFunc, multiplemesh ) < 0) {
 	MED_ERR_(_ret,MED_ERR_COUNT,MED_ERR_DATAGROUP,MED_ERR_NBR_MSG MED_ERR_MESH_MSG);
 	SSCRUTE(_path);goto ERROR;
       }

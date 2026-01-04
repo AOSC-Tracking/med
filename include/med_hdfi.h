@@ -411,7 +411,7 @@ extern MEDC_EXPORT
 med_err _MEDvisit(const med_idt fid, const char * const srcpath, const char * const dstpath,
 		  medvisitorfunc);
 extern MEDC_EXPORT
-med_err _MEDiterate(const med_idt fid, herr_t (*func)(), void * itdatas );
+med_err _MEDiterate(const med_idt fid, medvisitorfunc, void * itdatas );
 
 extern MEDC_EXPORT
 med_err

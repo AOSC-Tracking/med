@@ -26,7 +26,7 @@
 
 med_err
 _MEDvisit(const med_idt fid, const char * const srcpath, const char * const dstpath,
-	  herr_t (*func)() )
+	  herr_t (*func)(hid_t g_id, const char *name, const H5L_info_t *info, void *op_data) )
 {
 
   med_err    _ret=-1;

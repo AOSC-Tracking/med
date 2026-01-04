@@ -25,7 +25,7 @@
 /* 	  herr_t (*func)( hid_t g_id, const char *name, const H5L_info_t *info, void *op_data) ) */
 
 med_err
-_MEDiterate(const med_idt fid,  herr_t (*func)(), void * itdatas )
+_MEDiterate(const med_idt fid,  herr_t (*func)(hid_t g_id, const char *name, const H5L_info_t *info, void *op_data), void * itdatas )
 {
 
   med_err    _ret=-1;
